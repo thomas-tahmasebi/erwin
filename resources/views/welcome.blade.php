@@ -30,7 +30,8 @@
 </head>
 
 <body>
-    <form enctype='multipart/form-data' method='post' action='' class="m-3">
+    <form enctype='multipart/form-data' method='post' action='{{ route('create') }}' class="m-3">
+        @csrf
         <div class="container">
             <div class="row">
                 <div align="center" class="mb-3">
@@ -61,7 +62,7 @@
                             <label>Telefoon:</label>
                         </div>
                         <div class="col-sm-8">
-                            <input type='tel' class="form-control" name='Phone' id='phone'>
+                            <input type='tel' class="form-control" name='phone'>
                         </div>
                     </div>
                     <div class="mt-2">
@@ -98,7 +99,7 @@
                             <label>Toevoeging:</label>
                         </div>
                         <div class="col-sm-8">
-                            <input type='text' class="form-control" name='Toevoeging'>
+                            <input type='text' class="form-control" name='addition'>
                         </div>
                     </div>
                     <div class="mt-2">
