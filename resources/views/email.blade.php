@@ -41,8 +41,7 @@
     <table>
         <thead>
             <tr>
-                <th style="text-align:left;"><img style="max-width: 150px;"
-                        src="https://www.bachanatours.in/book/img/logo.png"></th>
+                <th style="text-align:left;"></th>
                 <th style="text-align:right;font-weight:400;">{{ date('F j, Y') }}</th>
             </tr>
         </thead>
@@ -52,24 +51,24 @@
             </tr>
             <tr>
                 <td style="width:50%;padding:20px;vertical-align:top">
-                    <p><span>Naam</span> {{ $data->name }}</p>
-                    <p><span>Email</span> {{ $data->email }}</p>
-                    <p><span>Telefoon</span> {{ $data->phone }}</p>
-                    <p><span>Mobiel</span> {{ $data->mobile }}</p>
-                    <p><span>Postcode</span> {{ $data->postcode }}</p>
-                    <p><span>Huisnummer</span> {{ $data->phone_house }}</p>
-                    <p><span>Toevoeging</span> {{ $data->addition }}</p>
-                    <p><span>Straat</span> {{ $data->street }}</p>
+                    <p><span>Naam</span> {{ $data['name'] }}</p>
+                    <p><span>Email</span> {{ $data['email'] }}</p>
+                    <p><span>Telefoon</span> {{ $data['phone'] }}</p>
+                    <p><span>Mobiel</span> {{ $data['mobile'] }}</p>
+                    <p><span>Postcode</span> {{ $data['postcode'] }}</p>
+                    <p><span>Huisnummer</span> {{ $data['phone_house'] }}</p>
+                    <p><span>Toevoeging</span> {{ $data['addition'] }}</p>
+                    <p><span>Straat</span> {{ $data['street'] }}</p>
                 </td>
                 <td style="width:50%;padding:20px;vertical-align:top">
-                    <p><span>Plaats</span> {{ $data->place }}</p>
-                    <p><span>Gebouw</span> {{ $data->building }}</p>
-                    <p><span>Verdieping</span> {{ $data->floor }}</p>
-                    <p><span>Ruimte/Lokaal</span> {{ $data->room_local }}</p>
-                    <p><span>Kostenplaats/Ordernummer</span> {{ $data->cost_center }}</p>
-                    <p><span>Toelichting en/of Opmerking</span> {{ $data->multiline }}</p>
-                    <p><span>Bestand 1</span> <a href="{{ url(Storage::url($data->file1)) }}">Click</a></p>
-                    <p><span>Bestand 2</span> <a href="{{ url(Storage::url($data->file2)) }}">Click</a></p>
+                    <p><span>Plaats</span> {{ $data['place'] }}</p>
+                    <p><span>Gebouw</span> {{ $data['building'] }}</p>
+                    <p><span>Verdieping</span> {{ $data['floor'] }}</p>
+                    <p><span>Ruimte/Lokaal</span> {{ $data['room_local'] }}</p>
+                    <p><span>Kostenplaats/Ordernummer</span> {{ $data['cost_center'] }}</p>
+                    <p><span>Toelichting en/of Opmerking</span> {{ $data['multiline'] }}</p>
+                    <p><span>Bestand 1</span> <a href="{{ url(Storage::url($data['file1'])) }}">Click</a></p>
+                    <p><span>Bestand 2</span> <a href="{{ url(Storage::url($data['file2'])) }}">Click</a></p>
                 </td>
             </tr>
         </tbody>

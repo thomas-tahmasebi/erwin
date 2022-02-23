@@ -1,170 +1,92 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<style>
+    body {
+        background-color: #e2e1e0;
+        font-family: Open Sans, sans-serif;
+        font-size: 100%;
+        font-weight: 400;
+        line-height: 1.4;
+        color: #000;
+    }
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    p {
+        margin: 0 0 10px 0;
+        padding: 0;
+        font-size: 14px;
+    }
 
-    <title>ISM Hoek BV Service aanvraag</title>
+    span {
+        display: block;
+        font-weight: bold;
+        font-size: 13px;
+    }
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
+    table {
+        max-width: 670px;
+        margin: 50px auto 10px;
+        background-color: #fff;
+        padding: 50px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+        -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+        border-top: solid 10px green;
+    }
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
-
-    <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}" defer></script>
-
-</head>
+</style>
+<html>
 
 <body>
-    @if ($errors->any())
-        {!! implode('', $errors->all("<div class='alert alert-danger' role='alert'>:message</div>")) !!}
-    @endif
-    <form enctype='multipart/form-data' method='post' action='{{ route('create') }}' class="m-3">
-        @csrf
-        <div class="container ">
-            <div class="row ml-3">
-                <div align="center" class="mb-3">
-                    <label>ISM Hoek BV Service aanvraag</label>
-                </div>
-                <div class="mb-3">
-                    <label>Contact gegevens</label>
-                </div><br>
-                <div>
-                    <div>
-                        <label>Naam:</label>
-                    </div>
-                    <div class="col-sm-8">
-                        <input type='text' class="form-control" name='name' required>
-                    </div>
-                </div>
-                <div class="mt-2">
-                    <div>
-                        <label>Email:</label>
-                    </div>
-                    <div class="col-sm-8">
-                        <input type='email' class="form-control" name='email'>
-                    </div>
-                </div>
-                <div class="mt-2">
-                    <div>
-                        <label>Telefoon:</label>
-                    </div>
-                    <div class="col-sm-8">
-                        <input type='tel' class="form-control" name='phone' required>
-                    </div>
-                </div>
-                <div class="mt-2">
-                    <div>
-                        <label>Mobiel:</label>
-                    </div>
-                    <div class="col-sm-8">
-                        <input type='tel' class="form-control" name='mobile'>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-3">
-                <label>Locatie/Afleveradres</label>
-            </div><br>
-            <div>
-                <div>
-                    <label>Postcode:</label>
-                </div>
-                <div class="col-sm-8">
-                    <input type='text' class="form-control" name='postcode'>
-                </div>
-            </div>
-            <div class="mt-2">
-                <div>
-                    <label>Huisnummer:</label>
-                </div>
-                <div class="col-sm-8">
-                    <input type='text' class="form-control" name='phone_house'>
-                </div>
-            </div>
-            <div class="mt-2">
-                <div>
-                    <label>Toevoeging:</label>
-                </div>
-                <div class="col-sm-8">
-                    <input type='text' class="form-control" name='addition'>
-                </div>
-            </div>
-            <div class="mt-2">
-                <div>
-                    <label>Straat:</label>
-                </div>
-                <div class="col-sm-8">
-                    <input type='text' class="form-control" name='street'>
-                </div>
-            </div>
-            <div class="mt-2">
-                <div>
-                    <label id='label10' for='Plaats'>Plaats:</label>
-                </div>
-                <div class="col-sm-8">
-                    <input type='text' class="form-control" name='place'>
-                </div>
-            </div>
-            <div class="mt-2">
-                <div>
-                    <label>Gebouw:</label>
-                </div>
-                <div class="col-sm-8">
-                    <input type='text' class="form-control" name='building'>
-                </div>
-            </div>
-            <div class="mt-2">
-                <div>
-                    <label>Verdieping:</label>
-                </div>
-                <div class="col-sm-8">
-                    <input type='text' class="form-control" name='floor'>
-                </div>
-            </div>
-            <div class="mt-2">
-                <div>
-                    <label>Ruimte/Lokaal:</label>
-                </div>
-                <div class="col-sm-8">
-                    <input type='text' class="form-control" name='room_local'>
-                </div>
-            </div>
-            <div class="mt-2">
-                <div>
-                    <label>Kostenplaats/Ordernummer:</label>
-                </div>
-                <div class="col-sm-8">
-                    <input type='text' class="form-control" name='cost_center'>
-                </div>
-            </div>
-            <div class="mt-2">
-                <div>
-                    <label>Toelichting en/of Opmerking:</label>
-                </div>
-                <div class="col-sm-8">
-                    <textarea name='multiline' class="form-control" required></textarea>
-                </div>
-            </div>
-            <div class="col-sm-8 mt-3">
-                <input type='file' name='file1' value="Bestand 1" class="form-control">
-            </div>
-            <div class="col-sm-8 mt-2">
-                <input type='file' name='file2' value="Bestand 2" class="form-control">
-            </div>
-            <div class="col-lg-12 mt-3">
-                <div class="col-sm-8">
-                    <input type='submit' class="form-control btn-success" value="Verzenden">
-                </div>
-            </div>
-        </div>
-    </form>
+    <table>
+        <thead>
+            <tr>
+                <th style="text-align:left;"></th>
+                <th style="text-align:right;font-weight:400;">{{ date('F j, Y') }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="height:35px;"></td>
+            </tr>
+            <tr>
+                <td style="width:50%;padding:20px;vertical-align:top">
+                    <p><span>Naam</span> {{ $data['name'] }}</p>
+                    <p><span>Email</span> {{ $data['email'] }}</p>
+                    <p><span>Telefoon</span> {{ $data['phone'] }}</p>
+                    <p><span>Mobiel</span> {{ $data['mobile'] }}</p>
+                    <p><span>Postcode</span> {{ $data['postcode'] }}</p>
+                    <p><span>Huisnummer</span> {{ $data['phone_house'] }}</p>
+                    <p><span>Toevoeging</span> {{ $data['addition'] }}</p>
+                    <p><span>Straat</span> {{ $data['street'] }}</p>
+                </td>
+                <td style="width:50%;padding:20px;vertical-align:top">
+                    <p><span>Plaats</span> {{ $data['place'] }}</p>
+                    <p><span>Gebouw</span> {{ $data['building'] }}</p>
+                    <p><span>Verdieping</span> {{ $data['floor'] }}</p>
+                    <p><span>Ruimte/Lokaal</span> {{ $data['room_local'] }}</p>
+                    <p><span>Kostenplaats/Ordernummer</span> {{ $data['cost_center'] }}</p>
+                    <p><span>Toelichting en/of Opmerking</span> {{ $data['multiline'] }}</p>
+                    <p><span>Bestand 1</span> <a href="
+          @isset($data['file1'])
+          {{ url(Storage::url($data['file1'])) }}
+          @endisset
+          ">Click</a></p>
+                    <p><span>Bestand 2</span> <a href="
+          @isset($data['file2'])
+          {{ url(Storage::url($data['file2'])) }}
+          @endisset">Click</a></p>
+                </td>
+            </tr>
+        </tbody>
+        <tfooter>
+            <tr>
+                <td colspan="2" style="font-size:14px;padding:50px 15px 0 15px;">
+                    <strong style="display:block;margin:0 0 10px 0;">Groeten</strong>
+                </td>
+            </tr>
+        </tfooter>
+    </table>
 </body>
 
 </html>

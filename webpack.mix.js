@@ -14,3 +14,23 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
     ]);
+
+
+let ImageminPlugin = require('imagemin-webpack-plugin').default;
+
+
+mix.webpackConfig({
+    plugins: [
+        new ImageminPlugin({
+            //            disable: process.env.NODE_ENV !== 'production', // Disable during development
+            pngquant: {
+                quality: '95-100',
+            },
+            test: /\.(jpe?g|png|gif|svg)$/i,
+        }),
+    ],
+})
+
+mix.copy('resources/assets/images', 'public/images', false);
+
+

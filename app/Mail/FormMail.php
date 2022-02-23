@@ -10,6 +10,7 @@ use Illuminate\Queue\SerializesModels;
 class FormMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
+    
     private $data;
 
     /**
@@ -29,6 +30,6 @@ class FormMail extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->view('email')->compact($this->data);
+        return $this->view('email')->withData($this->data);
     }
 }

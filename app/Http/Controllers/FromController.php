@@ -6,7 +6,6 @@ use App\Mail\FormMail;
 use App\Models\Form;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Storage;
 
 class FromController extends Controller
 {
