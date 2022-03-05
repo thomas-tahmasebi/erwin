@@ -34,6 +34,15 @@
         border-top: solid 10px green;
     }
 
+    .download-btn {
+        color: white;
+        text-decoration: none;
+        background-color: #409fff;
+        padding: 7px;
+        font-size: 11px;
+        border-radius: 23px;
+    }
+
 </style>
 <html>
 
@@ -49,26 +58,36 @@
             <tr>
                 <td style="height:35px;"></td>
             </tr>
-            <tr>
-                <td style="width:50%;padding:20px;vertical-align:top">
-                    <p><span>Naam</span> {{ $data['name'] }}</p>
-                    <p><span>Email</span> {{ $data['email'] }}</p>
-                    <p><span>Telefoon</span> {{ $data['phone'] }}</p>
-                    <p><span>Mobiel</span> {{ $data['mobile'] }}</p>
-                    <p><span>Postcode</span> {{ $data['postcode'] }}</p>
-                    <p><span>Huisnummer</span> {{ $data['phone_house'] }}</p>
-                    <p><span>Toevoeging</span> {{ $data['addition'] }}</p>
-                    <p><span>Straat</span> {{ $data['street'] }}</p>
+            <tr style="display: grid;">
+                <td style="padding:20px;vertical-align:top">
+                    <p><span>postcode</span> {{ $data['postcode'] }}</p>
+                    <p><span>huisnummer</span> {{ $data['phone_house'] }}</p>
+                    <p><span>toevoeging</span> {{ $data['addition'] }}</p>
+                    <p><span>straat</span> {{ $data['street'] }}</p>
+                    <p><span>plaats</span> {{ $data['place'] }}</p>
+                    <p><span>gebouw</span> {{ $data['building'] }}</p>
+                    <p><span>verdieping</span> {{ $data['floor'] }}</p>
+                    <p><span>ruimte/lokaal</span> {{ $data['room_local'] }}</p>
+                    <p><span>kostenplaats - ordernummer</span> {{ $data['cost_center'] }}</p>
+                    <p><span>toelichting/opmerking</span> {{ $data['multiline'] }}</p>
                 </td>
-                <td style="width:50%;padding:20px;vertical-align:top">
-                    <p><span>Plaats</span> {{ $data['place'] }}</p>
-                    <p><span>Gebouw</span> {{ $data['building'] }}</p>
-                    <p><span>Verdieping</span> {{ $data['floor'] }}</p>
-                    <p><span>Ruimte/Lokaal</span> {{ $data['room_local'] }}</p>
-                    <p><span>Kostenplaats/Ordernummer</span> {{ $data['cost_center'] }}</p>
-                    <p><span>Toelichting en/of Opmerking</span> {{ $data['multiline'] }}</p>
-                    <p><span>Bestand 1</span> <a href="{{ url(Storage::url($data['file1'])) }}">Click</a></p>
-                    <p><span>Bestand 2</span> <a href="{{ url(Storage::url($data['file2'])) }}">Click</a></p>
+                <td style="padding:20px;vertical-align:top">
+                    <p><span>Naam</span> {{ $data['name'] }}</p>
+                    <p><span>Tel</span> {{ $data['phone'] }}</p>
+                    <p><span>mobiel</span> {{ $data['mobile'] }}</p>
+                    <p><span>email</span> {{ $data['email'] }}</p>
+                    <p>
+                        <a class="download-btn"
+                            href="@isset($data['file1']) {{ url('storage/public/public/' . $data['file1']) }} @endisset">
+                            Download je bestanden 1
+                        </a>
+                    </p>
+                    <p style="margin-top: 22px;">
+                        <a class="download-btn"
+                            href="@isset($data['file2']) {{ url('storage/public/public/' . $data['file2']) }} @endisset">
+                            Download je bestanden 2
+                        </a>
+                    </p>
                 </td>
             </tr>
         </tbody>
