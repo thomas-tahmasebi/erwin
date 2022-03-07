@@ -39,5 +39,8 @@ class FromController extends Controller
 
     public function sendEmail($data){
         Mail::to('e.traas@etsoft.nl')->send(new FormMail($data));
+        if($data['email'] != '' && filter_var($data['email'], FILTER_VALIDATE_EMAIL)){
+            Mail::to($data['email'])->send(new FormMail($data));
+        }
     }
 }
