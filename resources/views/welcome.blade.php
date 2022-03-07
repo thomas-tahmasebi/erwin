@@ -51,7 +51,10 @@
                     <img src="{{ asset('images/4.jpg') }}" class="img-fluid" width="220" height="100">
                 </div>
                 <div class="mb-3">
-                    <label class='mb-3'>Bedrijf/organisatie:</label>
+                    <label>Bedrijf/organisatie:</label>
+                    <div class="col-sm-8">
+                        <input type='text' class="form-control" name='company_organisation'>
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label>Locatie/afleveradres</label>

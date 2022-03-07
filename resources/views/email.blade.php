@@ -60,6 +60,7 @@
             </tr>
             <tr style="display: grid;">
                 <td style="padding:20px;vertical-align:top">
+                    <p><span>bedrijf/organisatie</span> {{ $data['company_organisation'] }}</p>
                     <p><span>postcode</span> {{ $data['postcode'] }}</p>
                     <p><span>huisnummer</span> {{ $data['phone_house'] }}</p>
                     <p><span>toevoeging</span> {{ $data['addition'] }}</p>
