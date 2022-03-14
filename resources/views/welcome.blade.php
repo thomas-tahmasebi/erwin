@@ -20,6 +20,7 @@
     <!-- Scripts -->
     <script src="{{ url('js/app.js') }}" defer></script>
 
+
 </head>
 
 <body>
@@ -33,22 +34,24 @@
                 {{-- <div class="col-lg-5 mt-3">
                     <label>ISM Hoek BV Service aanvraag</label>
                 </div> --}}
-                <div class="col-lg-6">
-                    <img src="{{ asset('images/logo.jpg') }}" align='left' class="img-fluid" alt="logo" width="400">
+                <div class="col-lg-6 col-md-3">
+                    <img src="{{ asset('images/logo.jpg') }}" align='left' class="img-fluid" alt="logo"
+                        width="400" style="max-width:68%;">
                 </div>
                 <div class="col-lg-6 mt-3" align='left'>
-                    <img src="{{ asset('images/header-image.jpg') }}" class="img-fluid" width="250" height="100">
+                    <img src="{{ asset('images/header-image.jpg') }}" style="max-width:64%;" class="img-fluid" width="250" height="100">
                 </div>
-                <div class="col-lg-8" align='right'>
-                    <span style="font-size: 12px; text-align: right; margin-right: 13px;">TEL: 0115-613362</span>
-                    <span style="font-size: 12px; text-align: right; margin-right: -50px;">E-mail: service@ismhoekbv.nl</span>
+                <div class="col-lg-8 phone-email-text" style="margin-left: 4%;" align='right'>
+                    <span style="font-size: 12px; text-align: right;">TEL: 0115-613362</span>
+                    <span style="font-size: 12px; text-align: right;">E-mail:
+                        service@ismhoekbv.nl</span>
                 </div>
                 <hr style="border: 1px solid black;">
                 <div class="col-lg-12 mb-3" align='left'>
-                    <img src="{{ asset('images/1.jpg') }}" class="img-fluid" width="220" height="100">
-                    <img src="{{ asset('images/2.jpg') }}" class="img-fluid" width="220" height="100">
-                    <img src="{{ asset('images/3.jpg') }}" class="img-fluid" width="220" height="100">
-                    <img src="{{ asset('images/4.jpg') }}" class="img-fluid" width="220" height="100">
+                    <img src="{{ asset('images/1.jpg') }}" class="img-fluid" style="max-width:46%;" width="220" height="100">
+                    <img src="{{ asset('images/2.jpg') }}" class="img-fluid" style="max-width:46%;" width="220" height="100">
+                    <img src="{{ asset('images/3.jpg') }}" class="img-fluid" style="max-width:46%;" width="220" height="100">
+                    <img src="{{ asset('images/4.jpg') }}" class="img-fluid" style="max-width:46%;" width="220" height="100">
                 </div>
                 <div class="mb-3">
                     <label>Bedrijf/organisatie:</label>
