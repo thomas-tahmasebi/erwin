@@ -1,3 +1,1 @@
-A Laravel project
-Online:
-http://www.ismhoekbv.nl/
+A sample Laravel project.
